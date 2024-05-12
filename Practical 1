@@ -1,0 +1,41 @@
+Practical 1 
+
+
+
+#include <xc.h>
+#include <pic18f46k22.h>
+#define _XTAL_FREQ 20000000
+
+void main()
+{
+    TRISD = 0;
+    //unsigned int running_light[8]={0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+    //unsigned int running_2_led_at_once[5]={0x03, 0x0C, 0x30, 0xC0};
+    while (1)
+    {
+        //Running all LEDs at a time
+        PORTD = 0xFF;
+        __delay_ms(50);
+        PORTD = 0x00;
+        __delay_ms(50);
+    
+        //for (int i=0; i<4; i++)
+        //{
+            //PORTD = running_2_led_at_once[i];
+            //__delay_ms(500);
+        //}
+        
+
+        //for (int i=0; i<=8; i++)
+        //{
+            //PORTD = running_light[i];
+            //__delay_ms(500);
+        //}
+        
+
+        //LED = 1;
+        //__delay_ms(500);
+        //LED = 0;
+        //__delay_ms(500);
+    }
+}
